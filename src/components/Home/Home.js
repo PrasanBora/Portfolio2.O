@@ -15,23 +15,25 @@ function Home() {
             <Col md={7} className="home-header">
             <h1 style={{ paddingBottom: 15 }} className="heading">
                 Hello! {" "}
-               
+                <span className="wave" role="img" aria-labelledby="wave">
+                  👋🏻
+                </span>
               </h1>
               <h1 className="heading-name">
                 I'M
                 <strong className="main-name"> PRASAN BORA </strong>
               </h1>
-              <div style={{ paddingLeft: 45, textAlign: "left" }}>
+              <div style={{ paddingLeft: 45,paddingBottom: 45, textAlign: "left" }}>
                 <Type />
               </div>
               </Col>
 
-            <Col md={5} style={{ paddingBottom: 20 }}>
-              <img
+            <Col md={5} style={{ paddingBottom: 30 }}>
+              <img  
                 src={homeLogo}
                 alt="home pic"
                 className="img-fluid"
-                style={{ maxHeight: "450px" }}
+                style={{ maxHeight: "500px", paddingTop: 50 }}
               />
             </Col>
           </Row>
