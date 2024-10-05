@@ -8,6 +8,7 @@ import chatpod from "../../Assets/Projects/chatpod.jpg";
 import pomodoro from "../../Assets/Projects/pomodoro.jpg";
 import movie_plus from "../../Assets/Projects/movie_plus.jpg";
 import weather from "../../Assets/Projects/webapp.jpg";
+import linkedin from "../../Assets/Projects/linkedIn.png";
 
 function Projects() {
   return (
@@ -21,6 +22,17 @@ function Projects() {
           Here are a few projects I've worked on recently.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+
+         <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={linkedin}
+              title="LinkedIn Clone"
+              description="LinkedIn Clone This project is a LinkedIn clone built using the MERN (MongoDB, Express, React, Node.js) stack. It aims to replicate core features of LinkedIn, including user profiles, posts, connections, and a search functionality."
+              ghLink="https://github.com/PrasanBora/Linkedin_clone"
+              demoLink="https://linkedin-clone-x4of.onrender.com/"
+            />
+          </Col>
+
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={domgame}
