@@ -25,7 +25,7 @@ function Home2() {
                    Hello, Myself   <span className="purple">  Prasan Bora </span>
                    from <span className="purple"> Delhi, India.</span>
                    <br />
-                   I am currently Final year Engineering Student at Maharaja Agrasen Institute of Technology, Delhi
+                   I am a recent graduate in Electronics and Communication Engineering from Maharaja Agrasen Institute of Technology Delhi 
                    <br />
                    With expertise in languages such as C, C++ and JavaScript I am able to translate complex problems into elegant solutions  <br />
                    I have experience in developing responsive web applications with HTML, CSS, and React, as well as building server-side applications with Node.js and Express. 
