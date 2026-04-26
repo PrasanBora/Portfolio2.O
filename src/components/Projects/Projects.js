@@ -12,7 +12,7 @@ import pomodoro from "../../Assets/Projects/pomodoro.jpg";
 import movie_plus from "../../Assets/Projects/movie_plus.jpg";
 import webapp from "../../Assets/Projects/webapp.jpg";
 import linkedin from "../../Assets/Projects/linkedIn.png";
-import portfolio3 from "../../Assets/Projects/portfolio3.svg";
+import portfolio3 from "../../Assets/Projects/portfolio3.png";
 
 const IMAGES = {
   linkedin,

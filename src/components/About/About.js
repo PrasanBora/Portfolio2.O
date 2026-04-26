@@ -63,24 +63,32 @@ export default function About() {
           </Col>
           <Col md={{ span: 10, offset: 1 }}>
             {WRITING.map((w) => (
-              <a
-                key={w.href}
-                href={w.href}
-                target="_blank"
-                rel="noreferrer"
-                className="writing-card"
-              >
+              <div className="writing-card" key={w.href}>
                 <span className="writing-card__icon" aria-hidden>
                   <FiFileText />
                 </span>
-                <div style={{ flex: 1 }}>
-                  <h3>{w.title}</h3>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <h3>
+                    <a
+                      href={w.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: "#fff", textDecoration: "none" }}
+                    >
+                      {w.title}
+                    </a>
+                  </h3>
                   <p>{w.summary}</p>
-                  <span>
-                    {w.publication} <FiExternalLink aria-hidden />
-                  </span>
+                  <a
+                    href={w.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="writing-card__link"
+                  >
+                    Read on {w.publication} <FiExternalLink aria-hidden />
+                  </a>
                 </div>
-              </a>
+              </div>
             ))}
           </Col>
         </Row>

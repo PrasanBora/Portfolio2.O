@@ -60,21 +60,13 @@ export default function Skills() {
 
         <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
           {SERVICES.map(({ Icon, title, desc }) => (
-            <Col xs={12} md={4} className="project-card" key={title}>
-              <div className="work-card">
-                <div className="work-card__body">
-                  <span
-                    className="stack-item__icon"
-                    aria-hidden
-                    style={{ marginBottom: 14 }}
-                  >
-                    <Icon />
-                  </span>
-                  <h3 style={{ marginTop: 0 }}>{title}</h3>
-                  <p className="work-card__desc" style={{ margin: 0 }}>
-                    {desc}
-                  </p>
-                </div>
+            <Col xs={12} md={4} key={title}>
+              <div className="service-card">
+                <span className="service-card__icon" aria-hidden>
+                  <Icon />
+                </span>
+                <h3>{title}</h3>
+                <p>{desc}</p>
               </div>
             </Col>
           ))}
