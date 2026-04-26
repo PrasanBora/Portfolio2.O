@@ -920,6 +920,44 @@ button:focus {
 .work-card__sub { color: #d3a8ee; font-weight: 500; margin: 0 0 12px; }
 .work-card__desc { color: #c8b8da; line-height: 1.65; margin: 0 0 16px; font-size: 0.95em; }
 .work-card__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.work-card__tags .tag,
+.work-card__tags .tech-tag {
+  font-size: 0.74em;
+  background: rgba(199, 112, 240, 0.14);
+  color: #d3a8ee;
+  border: 1px solid rgba(199, 112, 240, 0.28);
+  padding: 3px 9px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+.work-card__title { color: #fff; font-size: 1.4em; font-weight: 600; margin: 14px 0 4px; }
+.work-card__badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(13, 23, 22, 0.78);
+  color: #c770f0;
+  font-size: 0.7em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(199, 112, 240, 0.35);
+}
+.work-card__media { position: relative; }
+.work-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #623686;
+  color: #fff !important;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.work-card__cta:hover { background: #6d20c5d7; transform: translateY(-1px); color: #fff; }
 
 /* --------- */
 /* Generic page header (used by About/Works/Projects/Skills pages) */

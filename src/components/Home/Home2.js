@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
-import Tilt from "react-parallax-tilt";
 import {
   AiFillGithub,
   AiOutlineTwitter,
@@ -45,13 +44,11 @@ export default function Home2() {
           </Col>
 
           <Col md={4} className="myAvtar">
-            <Tilt>
-              <img
-                src={myImg}
-                className="img-fluid"
-                alt="Prasan Bora avatar"
-              />
-            </Tilt>
+            <img
+              src={myImg}
+              className="img-fluid"
+              alt="Prasan Bora avatar"
+            />
           </Col>
         </Row>
 
