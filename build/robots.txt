@@ -1,0 +1,12 @@
+# Robots policy for Prasan Bora — Portfolio
+# https://www.robotstxt.org/robotstxt.html
+
+User-agent: *
+Allow: /
+Disallow: /static/
+
+# Sitemap
+Sitemap: https://prasan-bora-portfolio.vercel.app/sitemap.xml
+
+# Host (canonical)
+Host: https://prasan-bora-portfolio.vercel.app
