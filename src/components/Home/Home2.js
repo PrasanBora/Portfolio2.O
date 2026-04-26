@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
-import myImg from "../../Assets/avatar.svg";
 import Tilt from "react-parallax-tilt";
 import {
   AiFillGithub,
@@ -8,85 +7,101 @@ import {
   AiFillInstagram,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
+import myImg from "../../Assets/avatar.svg";
+import { SITE } from "../../data/site";
 
-function Home2() {
+export default function Home2() {
   return (
     <Container fluid className="home-about-section" id="about">
       <Container>
         <Row>
           <Col md={8} className="home-about-description">
             <h1 style={{ fontSize: "2.6em" }}>
-              LET ME <span className="purple"> INTRODUCE </span> MYSELF
+              LET ME <span className="purple">INTRODUCE</span> MYSELF
             </h1>
             <Card className="quote-card-view">
-             <Card.Body>
-               <blockquote className="blockquote mb-0" >
-                 <p style={{ textAlign: "justify" }}>
-                   Hello, Myself   <span className="purple">  Prasan Bora </span>
-                   from <span className="purple"> Delhi, India.</span>
-                   <br />
-                   I am a recent graduate in Electronics and Communication Engineering from Maharaja Agrasen Institute of Technology Delhi 
-                   <br />
-                   With expertise in languages such as C, C++ and JavaScript I am able to translate complex problems into elegant solutions  <br />
-                   I have experience in developing responsive web applications with HTML, CSS, and React, as well as building server-side applications with Node.js and Express. 
-                   <br />
-                   As a lifelong learner, I am committed to keeping up with the latest industry trends and continuously improving my skills I am always on the lookout for new opportunities to grow and learn
-                   <br />
-                 </p>
+              <Card.Body>
+                <blockquote className="blockquote mb-0">
+                  <p style={{ textAlign: "justify" }}>
+                    Hi, I'm{" "}
+                    <span className="purple">{SITE.name}</span> — a{" "}
+                    <span className="purple">software engineer</span> based in{" "}
+                    <span className="purple">India</span>.
+                    <br />
+                    {SITE.about.summary}
+                    <br />
+                    <br />
+                    I currently work as a{" "}
+                    <span className="purple">Software Developer at Chefadora</span>,
+                    where I build AI agents, mobile features, and backend systems
+                    used by real people.
+                    <br />
+                    Outside of work, I'm always shipping something — side projects,
+                    experiments, the odd dev.to article — to keep learning.
+                  </p>
+                </blockquote>
+              </Card.Body>
+            </Card>
+          </Col>
 
-                    </blockquote>
-                </Card.Body>
-                </Card>
-                </Col>
           <Col md={4} className="myAvtar">
             <Tilt>
-              <img src={myImg} className="img-fluid" alt="avatar" />
+              <img
+                src={myImg}
+                className="img-fluid"
+                alt="Prasan Bora avatar"
+              />
             </Tilt>
           </Col>
         </Row>
+
         <Row>
           <Col md={12} className="home-about-social">
             <h1>FIND ME ON</h1>
             <p>
-              Feel free to <span className="purple">connect </span>with me
+              Feel free to <span className="purple">connect</span> with me
             </p>
             <ul className="home-about-social-links">
               <li className="social-icons">
                 <a
-                  href="https://github.com/PrasanBora"
+                  href={SITE.socials.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="icon-colour home-social-icons"
+                  aria-label="Prasan Bora on GitHub"
                 >
                   <AiFillGithub />
                 </a>
               </li>
               <li className="social-icons">
                 <a
-                  href="https://twitter.com/its_prasan"
+                  href={SITE.socials.twitter}
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="icon-colour home-social-icons"
+                  aria-label="Prasan Bora on Twitter"
                 >
                   <AiOutlineTwitter />
                 </a>
               </li>
               <li className="social-icons">
                 <a
-                  href="https://www.linkedin.com/in/prasan-bora-943293184/"
+                  href={SITE.socials.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="icon-colour home-social-icons"
+                  aria-label="Prasan Bora on LinkedIn"
                 >
                   <FaLinkedinIn />
                 </a>
               </li>
               <li className="social-icons">
                 <a
-                  href="https://www.instagram.com/prasan_bora/"
+                  href={SITE.socials.instagram}
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
+                  aria-label="Prasan Bora on Instagram"
                 >
                   <AiFillInstagram />
                 </a>
@@ -98,4 +113,3 @@ function Home2() {
     </Container>
   );
 }
-export default Home2;

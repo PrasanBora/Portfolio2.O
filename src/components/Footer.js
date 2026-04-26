@@ -5,58 +5,91 @@ import {
   AiOutlineTwitter,
   AiFillInstagram,
 } from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
+import { FaLinkedinIn, FaCode } from "react-icons/fa";
+import { SITE } from "../data/site";
 
-function Footer() {
-  let date = new Date();
-  let year = date.getFullYear();
+export default function Footer() {
+  const year = new Date().getFullYear();
   return (
-    <Container fluid className="footer">
-      <Row>
-        <Col md="4" className="footer-copywright">
-          <h3>Designed and Developed with Love and Care </h3>
+    <Container fluid className="footer" id="footer">
+      <Row style={{ paddingTop: 16, alignItems: "center" }}>
+        <Col md={6} className="footer-copywright" style={{ textAlign: "center" }}>
+          <h4 style={{ display: "inline-block" }}>About</h4>
+          <p
+            style={{
+              color: "#b8a8cc",
+              fontSize: "0.9em",
+              maxWidth: 320,
+              margin: "0 auto",
+            }}
+          >
+            Developer based in {SITE.contact.location}. I like building things,
+            learning new stuff, and good coffee.
+          </p>
+          <p style={{ marginTop: 10 }}>
+            <a
+              href={`mailto:${SITE.contact.email}`}
+              style={{ color: "#d3a8ee", textDecoration: "none" }}
+            >
+              {SITE.contact.email}
+            </a>
+          </p>
         </Col>
-        <Col md="4" className="footer-copywright">
-          <h3>Copyright © {year} PB</h3>
-        </Col>
-        <Col md="4" className="footer-body">
+
+        <Col md={6} className="footer-body">
+          <h4>Find me on</h4>
           <ul className="footer-icons">
             <li className="social-icons">
               <a
-                href="https://github.com/PrasanBora"
+                href={SITE.socials.github}
                 style={{ color: "white" }}
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Prasan Bora on GitHub"
               >
                 <AiFillGithub />
               </a>
             </li>
             <li className="social-icons">
               <a
-                href="https://twitter.com/its_prasan"
+                href={SITE.socials.twitter}
                 style={{ color: "white" }}
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Prasan Bora on Twitter"
               >
                 <AiOutlineTwitter />
               </a>
             </li>
             <li className="social-icons">
               <a
-                href="https://www.linkedin.com/in/prasan-bora-943293184/"
+                href={SITE.socials.linkedin}
                 style={{ color: "white" }}
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Prasan Bora on LinkedIn"
               >
                 <FaLinkedinIn />
               </a>
             </li>
             <li className="social-icons">
               <a
-                href="https://www.instagram.com/prasan_bora/"
+                href={SITE.socials.leetcode}
                 style={{ color: "white" }}
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Prasan Bora on LeetCode"
+              >
+                <FaCode />
+              </a>
+            </li>
+            <li className="social-icons">
+              <a
+                href={SITE.socials.instagram}
+                style={{ color: "white" }}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Prasan Bora on Instagram"
               >
                 <AiFillInstagram />
               </a>
@@ -64,8 +97,12 @@ function Footer() {
           </ul>
         </Col>
       </Row>
+
+      <div className="footer-bottom">
+        <Container>
+          © {year} {SITE.name}. All rights reserved.
+        </Container>
+      </div>
     </Container>
   );
 }
-
-export default Footer;

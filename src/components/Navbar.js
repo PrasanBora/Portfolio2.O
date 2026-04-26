@@ -1,32 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../Assets/logo.png";
-// import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
-// import { CgGitFork } from "react-icons/cg";
 import {
   AiOutlineHome,
-  AiOutlineFundProjectionScreen,
   AiOutlineUser,
+  AiOutlineFundProjectionScreen,
+  AiOutlineAppstore,
 } from "react-icons/ai";
-
 import { CgFileDocument } from "react-icons/cg";
+import { TbStack2 } from "react-icons/tb";
+import { SITE } from "../data/site";
 
-function NavBar() {
-  const [expand, updateExpanded] = useState(false);
+export default function NavBar() {
+  const [expand, setExpand] = useState(false);
   const [navColour, updateNavbar] = useState(false);
 
-  function scrollHandler() {
-    if (window.scrollY >= 20) {
-      updateNavbar(true);
-    } else {
-      updateNavbar(false);
-    }
-  }
-
-  window.addEventListener("scroll", scrollHandler);
+  useEffect(() => {
+    const onScroll = () => updateNavbar(window.scrollY >= 20);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <Navbar
@@ -36,68 +33,90 @@ function NavBar() {
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>
-        <Navbar.Brand href="/" className="d-flex">
-          <img src={logo} className="img-fluid logo" alt="brand" />
+        <Navbar.Brand
+          as={Link}
+          to="/"
+          className="d-flex"
+          aria-label={`${SITE.name} home`}
+        >
+          <img src={logo} className="img-fluid logo" alt="Prasan Bora logo" />
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
-          onClick={() => {
-            updateExpanded(expand ? false : "expanded");
-          }}
+          onClick={() => setExpand(expand ? false : "expanded")}
         >
-
-         <span></span>
           <span></span>
           <span></span>
-          
+          <span></span>
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
+              <Nav.Link
+                as={NavLink}
+                to="/"
+                end
+                onClick={() => setExpand(false)}
+              >
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
               </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
               <Nav.Link
-                as={Link}
+                as={NavLink}
                 to="/about"
-                onClick={() => updateExpanded(false)}
+                onClick={() => setExpand(false)}
               >
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> TechStack
+                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
               </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
               <Nav.Link
-                as={Link}
-                to="/project"
-                onClick={() => updateExpanded(false)}
+                as={NavLink}
+                to="/works"
+                onClick={() => setExpand(false)}
               >
-                <AiOutlineFundProjectionScreen
-                  style={{ marginBottom: "2px" }}
-                />{" "}
+                <AiOutlineAppstore style={{ marginBottom: "2px" }} /> Works
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                as={NavLink}
+                to="/projects"
+                onClick={() => setExpand(false)}
+              >
+                <AiOutlineFundProjectionScreen style={{ marginBottom: "2px" }} />{" "}
                 Projects
               </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
-             <Nav.Link
-              href="https://drive.google.com/file/d/1dPPUjzVTe544kEZB2ZwwFyqXBLDFQxXR/view"
-              target="_blank"
-              onClick={() => updateExpanded(false)}
-             >
-              <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
-             </Nav.Link>
+              <Nav.Link
+                as={NavLink}
+                to="/skills"
+                onClick={() => setExpand(false)}
+              >
+                <TbStack2 style={{ marginBottom: "2px" }} /> Tech Stack
+              </Nav.Link>
             </Nav.Item>
-            
-            
+
+            <Nav.Item>
+              <Nav.Link
+                href={SITE.contact.resume}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => setExpand(false)}
+                aria-label="Open Prasan Bora's resume"
+              >
+                <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
+              </Nav.Link>
+            </Nav.Item>
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
 }
-
-export default NavBar;

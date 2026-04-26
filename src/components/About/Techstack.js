@@ -7,106 +7,82 @@ import {
   DiNodejs,
   DiGit,
   DiMongodb,
-  DiCss3,
 } from "react-icons/di";
-
 import {
-  SiFirebase,
-  SiPostgresql,
-  SiCanva,
+  SiNextdotjs,
+  SiTypescript,
   SiTailwindcss,
-  SiVisualstudiocode,
+  SiPostgresql,
+  SiRedis,
+  SiDocker,
+  SiNestjs,
+  SiAmazonaws,
   SiVercel,
-
+  SiFigma,
+  SiOpenai,
+  SiPrisma,
+  SiExpress,
+  SiExpo,
+  SiSocketdotio,
+  SiStrapi,
+  SiGithubactions,
+  SiJest,
+  SiPostman,
+  SiSentry,
+  SiAndroidstudio,
+  SiXcode,
+  SiTerraform,
 } from "react-icons/si";
+import { TbBrandReactNative } from "react-icons/tb";
+import { FiBarChart2 } from "react-icons/fi";
 
-import { FaHtml5 ,
-  FaFigma,
-  FaGithub,
-   FaBootstrap 
+const STACK = [
+  // Frontend
+  { Icon: DiJavascript1, name: "JavaScript" },
+  { Icon: SiTypescript, name: "TypeScript" },
+  { Icon: DiReact, name: "React.js" },
+  { Icon: SiNextdotjs, name: "Next.js" },
+  { Icon: TbBrandReactNative, name: "React Native" },
+  { Icon: SiExpo, name: "Expo" },
+  { Icon: SiTailwindcss, name: "Tailwind" },
+  // Backend
+  { Icon: CgCPlusPlus, name: "C++" },
+  { Icon: DiNodejs, name: "Node.js" },
+  { Icon: SiExpress, name: "Express" },
+  { Icon: SiNestjs, name: "NestJS" },
+  { Icon: SiSocketdotio, name: "Socket.io" },
+  { Icon: SiPrisma, name: "Prisma" },
+  { Icon: SiStrapi, name: "Strapi" },
+  // Databases
+  { Icon: DiMongodb, name: "MongoDB" },
+  { Icon: SiPostgresql, name: "PostgreSQL" },
+  { Icon: SiRedis, name: "Redis" },
+  // Tools & Infra
+  { Icon: DiGit, name: "Git" },
+  { Icon: SiGithubactions, name: "GH Actions" },
+  { Icon: SiDocker, name: "Docker" },
+  { Icon: SiJest, name: "Jest" },
+  { Icon: SiPostman, name: "Postman" },
+  { Icon: SiSentry, name: "Sentry" },
+  { Icon: FiBarChart2, name: "PostHog" },
+  { Icon: SiAndroidstudio, name: "Android Studio" },
+  { Icon: SiXcode, name: "Xcode" },
+  { Icon: SiOpenai, name: "OpenAI" },
+  { Icon: SiFigma, name: "Figma" },
+  { Icon: SiAmazonaws, name: "AWS" },
+  { Icon: SiVercel, name: "Vercel" },
+  { Icon: SiTerraform, name: "Terraform" },
+];
 
-} from "react-icons/fa";
-
-import { TbSql } from "react-icons/tb";
-
-function Techstack() {
+export default function Techstack() {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      
-      <Col xs={4} md={2} className="tech-icons">
-      <FaHtml5 />
-      </Col>
-
-      <Col xs={4} md={2} className="tech-icons">
-      <DiCss3 />
-      </Col>
-
-      <Col xs={4} md={2} className="tech-icons">
-      <FaBootstrap />
-      </Col>
-
-      <Col xs={4} md={2} className="tech-icons">
-      <SiTailwindcss />
-      </Col>
-
-      <Col xs={4} md={2} className="tech-icons">
-        <DiJavascript1 />
-      </Col>
-
-      <Col xs={4} md={2} className="tech-icons">
-        <DiReact />
-      </Col>
-
-      <Col xs={4} md={2} className="tech-icons">
-        <DiNodejs />
-      </Col>
-
-       <Col xs={4} md={2} className="tech-icons">
-        <DiMongodb />
-      </Col> 
-     
-      <Col xs={4} md={2} className="tech-icons">
-      <TbSql />
-      </Col>
-
-      <Col xs={4} md={2} className="tech-icons">
-        <SiPostgresql />
-      </Col>
-
-      <Col xs={4} md={2} className="tech-icons">
-        <CgCPlusPlus />
-      </Col>
-
-      <Col xs={4} md={2} className="tech-icons">
-        <DiGit />
-      </Col>
-
-      <Col xs={4} md={2} className="tech-icons">
-        <FaGithub />
-      </Col>
-
-      <Col xs={4} md={2} className="tech-icons">
-        <SiFirebase />
-      </Col>
- 
-      <Col xs={4} md={2} className="tech-icons">
-        <SiVisualstudiocode />
+      {STACK.map(({ Icon, name }) => (
+        <Col xs={4} md={2} className="tech-icons" title={name} key={name}>
+          <Icon aria-hidden />
+          <span className="tech-icon-name">{name}</span>
         </Col>
- 
-      <Col xs={4} md={2} className="tech-icons">
-        <SiVercel />
-      </Col>
-
-      <Col xs={4} md={2} className="tech-icons">
-      <SiCanva />
-      </Col>
-   
-      <Col xs={4} md={2} className="tech-icons">
-      <FaFigma />
-      </Col>
-
+      ))}
     </Row>
   );
 }
-
-export default Techstack;

@@ -1,6 +1,11 @@
 import React from "react";
-function Pre(props) {
-  return <div id={props.load ? "preloader" : "preloader-none"}></div>;
-}
 
-export default Pre;
+export default function Pre({ load }) {
+  return (
+    <div
+      id={load ? "preloader" : "preloader-none"}
+      role="status"
+      aria-label="Loading Prasan Bora's portfolio"
+    />
+  );
+}

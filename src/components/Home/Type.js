@@ -1,16 +1,12 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
+import { SITE } from "../../data/site";
 
-function Type() {
+export default function Type() {
   return (
     <Typewriter
       options={{
-        strings: [
-          "Web Developer",
-          "Aspiring SDE",
-          "DSA Practitioner",
-          "Freelancer"
-        ],
+        strings: SITE.hero.typewriter,
         autoStart: true,
         loop: true,
         deleteSpeed: 50,
@@ -18,5 +14,3 @@ function Type() {
     />
   );
 }
-
-export default Type;
