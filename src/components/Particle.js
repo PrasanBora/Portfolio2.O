@@ -19,8 +19,7 @@ export default function Particle() {
           },
         },
         interactivity: {
-          events: { onclick: { enable: true, mode: "push" } },
-          modes: { push: { particles_nb: 1 } },
+          events: { onclick: { enable: false }, onhover: { enable: false } },
         },
         retina_detect: true,
       }}
