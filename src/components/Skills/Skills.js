@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import Particle from "../Particle";
 import Techstack from "../About/Techstack";
+import Github from "../About/Github";
 import useDocumentMeta from "../../hooks/useDocumentMeta";
 
 const SERVICES = [
@@ -49,6 +50,14 @@ export default function Skills() {
           and infra.
         </p>
         <Techstack />
+
+        <h1 className="project-heading">
+          Days I've <strong className="purple">Coded</strong>
+        </h1>
+        <p style={{ color: "#c8b8da", textAlign: "center", marginBottom: 24 }}>
+          My GitHub contributions over the past year.
+        </p>
+        <Github />
 
         <h1 className="project-heading">
           How I Can <strong className="purple">Help</strong>
