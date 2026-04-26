@@ -13,6 +13,8 @@ import movie_plus from "../../Assets/Projects/movie_plus.jpg";
 import webapp from "../../Assets/Projects/webapp.jpg";
 import linkedin from "../../Assets/Projects/linkedIn.png";
 import portfolio3 from "../../Assets/Projects/portfolio3.png";
+import video2caption from "../../Assets/Projects/video2caption.png";
+import frontend_design from "../../Assets/Projects/frontend_design.png";
 
 const IMAGES = {
   linkedin,
@@ -22,6 +24,8 @@ const IMAGES = {
   domgame,
   pomodoro,
   portfolio3,
+  video2caption,
+  frontend_design,
 };
 
 export default function Projects() {

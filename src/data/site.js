@@ -199,7 +199,7 @@ export const FEATURED_WORKS = [
 export const PROJECTS = [
   {
     id: "portfolio-3",
-    title: "Portfolio 3.0",
+    title: "Portfolio",
     date: "2025 — Present",
     description:
       "My latest personal portfolio — a Next.js 14 + TypeScript site with Tailwind, Framer Motion animations, a liquid-ether WebGL hero and per-page metadata. Source of truth for all my work, writing and contact info.",
@@ -207,6 +207,28 @@ export const PROJECTS = [
     repo: "https://github.com/PrasanBora/portfolio3.0",
     demo: "https://portfolio3-0-mocha.vercel.app/",
     image: "portfolio3",
+  },
+  {
+    id: "video-caption-tool",
+    title: "Video Caption Tool",
+    date: "Feb 2026",
+    description:
+      "A web-based tool that extracts timestamped captions from video files using OpenAI Whisper. Runs locally with no API costs and supports Hindi, English, and auto language detection.",
+    tech: ["Python", "Streamlit", "Whisper", "FFmpeg"],
+    repo: "https://github.com/PrasanBora/video-caption-tool",
+    demo: "",
+    image: "video2caption",
+  },
+  {
+    id: "frontend-design",
+    title: "Magma Clone",
+    date: "Apr 2024",
+    description:
+      "A pixel-faithful clone of thisismagma.com built to explore advanced web animation. Uses GSAP for sequenced motion, Locomotive Scroll for inertia, and Canvas for 3D-style scroll effects.",
+    tech: ["HTML", "CSS", "JavaScript", "GSAP", "Locomotive Scroll"],
+    repo: "https://github.com/PrasanBora/frontend_design",
+    demo: "https://prasanbora.github.io/frontend_design/",
+    image: "frontend_design",
   },
   {
     id: "linkedin-clone",

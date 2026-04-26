@@ -53,7 +53,7 @@ export default function Home2() {
         </Row>
 
         <Row>
-          <Col md={12} className="home-about-social">
+          <Col md={12} className="home-about-social" id="connect">
             <h1>FIND ME ON</h1>
             <p>
               Feel free to <span className="purple">connect</span> with me

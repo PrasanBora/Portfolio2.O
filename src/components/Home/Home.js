@@ -66,8 +66,14 @@ export default function Home() {
                   View My Work <HiArrowRight aria-hidden />
                 </Link>
                 <a
-                  href={`mailto:${SITE.contact.email}`}
+                  href="#connect"
                   className="btn-pb outline"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document
+                      .getElementById("connect")
+                      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }}
                 >
                   <FiMail aria-hidden /> Let's Connect
                 </a>
